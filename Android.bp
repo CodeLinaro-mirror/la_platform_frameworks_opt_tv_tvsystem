@@ -18,10 +18,36 @@ java_sdk_library {
     api_packages: [
         "com.android.libraries.tv.tvsystem",
         "com.android.libraries.tv.tvsystem.display",
+        "com.android.libraries.tv.tvsystem.user",
         "com.android.libraries.tv.tvsystem.wifi"
     ],
     dex_preopt: {
         enabled: false,
     }
 }
+
+// Implicitly references by com.android.libraries.tv.tvsystem
+filegroup {
+  name: "com.android.libraries.tv.tvsystem-removed.api.public.latest",
+  srcs: [
+      "api/removed.txt"
+  ]
+}
+
+// Implicitly references by com.android.libraries.tv.tvsystem
+filegroup {
+  name: "com.android.libraries.tv.tvsystem-removed.api.system.latest",
+  srcs: [
+      "api/system-removed.txt"
+  ]
+}
+
+// Implicitly references by com.android.libraries.tv.tvsystem
+filegroup {
+  name: "com.android.libraries.tv.tvsystem-removed.api.test.latest",
+  srcs: [
+      "api/test-removed.txt"
+  ]
+}
+
 

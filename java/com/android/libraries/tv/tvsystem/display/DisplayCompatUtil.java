@@ -52,6 +52,9 @@ public final class DisplayCompatUtil {
         DisplayInfo displayInfo = new DisplayInfo();
         display.getDisplayInfo(displayInfo);
         android.hardware.display.DeviceProductInfo info = displayInfo.deviceProductInfo;
+        if (info == null) {
+            return null;
+        }
         DeviceProductInfo.ManufactureDate manufactureDate;
         if (info.getManufactureDate() == null) {
             manufactureDate = null;
@@ -60,7 +63,8 @@ public final class DisplayCompatUtil {
                     info.getManufactureDate().getWeek(), info.getManufactureDate().getYear());
         }
         return new DeviceProductInfo(info.getName(), info.getManufacturerPnpId(),
-                info.getProductId(), info.getModelYear(), manufactureDate);
+                info.getProductId(), info.getModelYear(), manufactureDate,
+                info.getRelativeAddress());
     }
 
     private DisplayCompatUtil() {}
