@@ -20,14 +20,18 @@ java_library {
     name: "tv-services",
     installable: true,
     system_ext_specific: true,
+    platform_apis: true,
 
     // The convention is 'tv-services.$(module_name)-srcs'
     srcs: [
         ":tv-services.input-srcs",
+        ":tv-services.watchdogservice-srcs",
+        ":framework-javastream-protos",
     ],
 
     libs: [
         "services",
+        "framework",
     ],
 
     required: [
