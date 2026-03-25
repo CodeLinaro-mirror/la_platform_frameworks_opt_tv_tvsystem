@@ -1,5 +1,4 @@
-// Signature format: 6.0
-// - style=java
+// Signature format: 2.0
 package com.android.libraries.tv.tvsystem.media {
 
   public final class AudioDeviceAttributes {
